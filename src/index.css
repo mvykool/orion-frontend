@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*custom css*/
+
+.bg-login {
+    background: rgb(210, 118, 133);
+    background: linear-gradient(21deg, rgba(210, 118, 133, 1) 0%, rgba(158, 71, 132, 1) 21%, rgba(102, 52, 127, 1) 47%, rgba(55, 48, 107, 1) 69%, rgba(35, 27, 98, 1) 98%);
+}
+
+.bg-glass {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
