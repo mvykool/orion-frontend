@@ -4,6 +4,10 @@
 
 /*custom css*/
 
+:root {
+    --deep-blue: #37306B;
+}
+
 .bg-login {
     background: rgb(210, 118, 133);
     background: linear-gradient(21deg, rgba(210, 118, 133, 1) 0%, rgba(158, 71, 132, 1) 21%, rgba(102, 52, 127, 1) 47%, rgba(55, 48, 107, 1) 69%, rgba(35, 27, 98, 1) 98%);
