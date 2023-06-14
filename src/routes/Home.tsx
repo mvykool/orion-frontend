@@ -9,25 +9,30 @@ const Home = () => {
 
   const [notes, setNotes] = useState([]);
 
-  function getNotes(){
+  async function getNotes() {
     const url = "https://localhost:7045/api/Notes";
-
-    fetch(url, {
-      method: "GET",
-      headers: new Headers({ 'Content-type': 'application/json'}),
-    })
-    .then((res:any) => res.json())
-    .then((postFromServer : any) => {
-      console.log(postFromServer);
-      setNotes(postFromServer)
-    })
-    .catch((err) => console.log(err));
+  
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+        headers: new Headers({ 'Content-type': 'application/json'}),
+      });
+  
+      if (response.ok) {
+        const postFromServer = await response.json();
+        console.log(postFromServer);
+        setNotes(postFromServer);
+      } else {
+        console.error('Error fetching notes:', response.status);
+      }
+    } catch (error) {
+      console.error('Error fetching notes:', error);
+    }
   }
-
+  
   useEffect(() => {
-  getNotes()
+    getNotes();
   }, []);
-
 
 
   return (
