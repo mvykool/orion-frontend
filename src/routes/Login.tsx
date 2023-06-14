@@ -1,6 +1,20 @@
+import { useStateContext } from "../context/AuthContext";
+
+interface Props {
+	setIsLogin: (value: boolean) => void;
+}
+
+const Login = ({setIsLogin}: Props) => {
 
 
-const Login = () => {
+	const { setUser } = useStateContext();
+
+
+	const handleLogin = () => {
+		setUser(true);
+		setIsLogin(true);
+	};
+
 	return (
 		<section className="h-screen w-screen flex items-center justify-center bg-login flex-col">
 
@@ -15,7 +29,7 @@ const Login = () => {
 			<input type="password" className="h-9 bg-transparent text-white border-2 border-white placeholder-white pl-2 rounded-lg" placeholder="Password" />
 			</div>
 
-			<button type="button" className="mt-9 h-14 text-white bg-rose-400 w-full flex justify-center items-center rounded-lg">Login</button>
+			<button onClick={handleLogin} type="button" className="mt-9 h-14 text-white bg-rose-400 w-full flex justify-center items-center rounded-lg">Login</button>
 
 			<p className="flex justify-center mt-8 text-white gap-2">No Account? <span className="text-red-600">Sign Up</span></p>
 			</div>
