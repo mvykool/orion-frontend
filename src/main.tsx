@@ -6,13 +6,13 @@ import './index.css'
 //routes
 import Login from './routes/Login';
 import SignUp from './routes/SignUp';
-import Home from './routes/Home';
+import App from './routes/App';
 import Settings from './routes/Settings';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>,
+    element: <App/>,
   },
   {
     path: "/login",
