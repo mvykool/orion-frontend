@@ -1,8 +1,35 @@
 import Notes from "../components/Notes"
 import AddBtn from "../components/AddBtn"
 import { Link } from "react-router-dom"
+import { useEffect, useState } from "react"
 
 const Home = () => {
+  
+  //api call
+
+  const [notes, setNotes] = useState([]);
+
+  function getNotes(){
+    const url = "https://localhost:7045/api/Notes";
+
+    fetch(url, {
+      method: "GET",
+      headers: new Headers({ 'Content-type': 'application/json'}),
+    })
+    .then((res:any) => res.json())
+    .then((postFromServer : any) => {
+      console.log(postFromServer);
+      setNotes(postFromServer)
+    })
+    .catch((err) => console.log(err));
+  }
+
+  useEffect(() => {
+  getNotes()
+  }, []);
+
+
+
   return (
     <div className="h-screen w-screen bg-gray-900 px-5">
 
@@ -15,10 +42,11 @@ const Home = () => {
     <input type="text" placeholder="search" className="h-10 rounded-lg bg-gray-700 px-3 w-full" />
     </div>
 
-      <div className="mt-10 gap-5 flex flex-col">
-      <Notes/>
-      <Notes/>
-      </div>
+    {notes.map((note: any) => (
+        <div className="mt-10 gap-5 flex flex-col">
+        <Notes title={note.title} content={note.content} />
+        </div>
+    ))}
 
       <AddBtn/>
     </div>
