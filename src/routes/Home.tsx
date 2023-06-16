@@ -2,15 +2,18 @@ import Notes from "../components/Notes"
 import AddBtn from "../components/AddBtn"
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
+import { useStateContext } from "../context/AuthContext";
 
 const Home = () => {
+
+  const { userId } = useStateContext();
   
   //api call
 
   const [notes, setNotes] = useState([]);
 
   async function getNotes() {
-    const url = "https://localhost:7045/api/Notes";
+    const url = `https://localhost:7045/api/Notes?userId=${userId}`;
   
     try {
       const response = await fetch(url, {

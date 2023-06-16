@@ -6,12 +6,11 @@ const Context = createContext<any>(({ user: false, setUser: () => ({}) }));
 
 export const StateContext = ({ children }: { children: React.ReactNode }) => {
 
-    const [user, setUser] = useState(false);
+    const [userId, setUserId] = useState(0);
 
-	
     return (
         <div>
-            <Context.Provider value={{ user, setUser }}>
+            <Context.Provider value={{ userId, setUserId }}>
                 {children}
             </Context.Provider>
         </div>
