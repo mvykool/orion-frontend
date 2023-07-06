@@ -42,7 +42,7 @@ const Home = () => {
     <div className="h-screen w-screen bg-gray-900 px-5">
 
       <div className="flex justify-between py-8 px-3 items-center">
-      <h1 className="text-white text-4xl">Notes</h1>
+      <h1 className="text-gray-300 text-4xl">Notes</h1>
       <Link to={"/settings"}><img src="https://i.kym-cdn.com/photos/images/original/002/355/086/887.png" alt="" className="h-12 w-12 rounded-full"/></Link>
       </div>
 
