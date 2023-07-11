@@ -56,8 +56,8 @@ const Login = ({setIsLogin}: Props) => {
 		<section className="h-screen w-screen flex items-center justify-center bg-login flex-col">
 
 			<div className="bg-glass h-[70vh] w-[75vw] rounded-lg p-10 relative overflow-hidden">
-			<h2 className="flex justify-center text-purple-950 mt-8 text-3xl font-semibold">
-				<span className='text-red-400'>L</span>ogin
+			<h2 className="flex justify-center text-purple-800 mt-8 text-3xl font-semibold">
+				<span className='text-red-300'>L</span>ogin
 			</h2>
 			
 			<div className="flex justify-center	mt-20 gap-8 flex-col">
